@@ -129,10 +129,6 @@ const analyzeImage = async (imageURI) => {
       throw new Error('No internet connection.');
     }
 
-    const visionAPI = new VisionAPI({
-      apiKey: 'AIzaSyA8mWWrY1JPIcsQ_RPiz_dXWcFoft1YdCQ', // Replace with your Google Vision API key
-    });
-
     const response = await visionAPI.analyzeImage(imageURI);
     return response.labels[0].description; // Return the description of the label
   } catch (error) {
